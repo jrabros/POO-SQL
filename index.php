@@ -14,7 +14,8 @@
 		<h1>Escolha seu jogo</h1>
 		<table class="listagem">
 			<?php
-				$busca = $banco->query("select * from jogos order by cod");
+				$q = "select j.cod, j.nome, g.genero, j.capa, p.produtora from jogos j join generos g on j.genero = g.cod join produtoras p on j.produtora = p.cod";
+				$busca = $banco->query($q);
 				if(!$busca) {
 					echo "<tr><td> A busca não aconteceu";
 				} else {
@@ -25,8 +26,7 @@
 							$t = thumb($reg->capa);
 						echo "<tr>
 								<td><img class='mini' src='$t'/></td>
-								<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a></td>
-								<td>Adm</td>
+								<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a>[$reg->genero]<br>$reg->produtora	<td>Adm</td>
 							</tr>";
 						}
 					}	
