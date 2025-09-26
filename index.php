@@ -10,17 +10,23 @@
 		require_once "includes/banco.php";
 		require_once "includes/funcoes.php";
 		$ordem = $_GET['o'] ?? "n";
+		$chave = $_GET['c'] ?? "";
 
 	?>
 	<div id="corpo">
 		<?php include_once 'topo.php';?>
 		<h1>Escolha seu jogo</h1>
-		<fomr method="get" id="busca" action="index.php">
-			Odernar: <a href="index.php?o=n">Nome</a> | <a href="index.php?o=p">Produtora</a>  | <a href="index.php?o=n1">Nota Alta</a>  | <a href="index.php?o=n2">Nota Baixa</a> | Buscar: <input type="text" name="c" size="10" maxlength="40"/>	<input type="submit" value="Ok"/>
+		<form method="get" id="busca" action="index.php">
+			Odernar: <a href="index.php?o=n&c=<?php echo $chave;?>">Nome</a> | <a href="index.php?o=p&c=<?php echo $chave;?>">Produtora</a>  | <a href="index.php?o=n1&c=<?php echo $chave;?>">Nota Alta</a>  | <a href="index.php?o=n2&c=<?php echo $chave;?>">Nota Baixa</a> | <a href="index.php">Todos</a>  | Buscar: <input type="text" name="c" size="10" maxlength="40"/><input type="submit" value="Ok"/>
 		</form>	
 		<table class="listagem">
 			<?php
 				$q = "select j.cod, j.nome, g.genero, j.capa, p.produtora from jogos j join generos g on j.genero = g.cod join produtoras p on j.produtora = p.cod";
+
+				if(!empty($chave)){
+					$q .= " where j.nome like '%$chave%' or p.produtora like '%$chave%' or g.genero like '%$chave%'";
+				}
+
 				switch ($ordem){
 					case "p": $q .= " order by p.produtora"; 
 						break;
