@@ -1,6 +1,6 @@
 body {
 	background-color: #ddd;
-	font-family: Tahoma;
+	font-family: Arial;
 }
 div#corpo{
 	width: 800px;
@@ -56,4 +56,21 @@ table.detalhes td {
 	padding: 10px;
 	vertical-align: top;
 	border: 1px solid black;
+}
+
+footer{
+	text-align: center;
+	font-family: Arial;
+	font-size: 11px;
+}
+
+header{
+	text-align: right;
+	font-size: 12px;
+	font-family: Arial;
+}
+
+form#busca{
+	margin-bottom: 20px;
+	text-align: left;
 }

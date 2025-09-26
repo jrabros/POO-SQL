@@ -13,6 +13,7 @@
     ?>
     <div id = "corpo">
         <?php
+            include_once 'topo.php';
             $c = $_GET['cod'] ?? 0;
             $busca = $banco->query("select * from jogos where cod = $c");
         ?>
