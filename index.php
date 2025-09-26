@@ -4,26 +4,17 @@
 	<title>Listagem de jogos</title>
 	<meta charset = "UTF-8"/>
 	<link rel="stylesheet" href="estilos/style.css" />
-	<?php
-		function thumb($arq){
-			$caminho = "fotos/$arq";
-			if(is_null($arq) || !file_exists($caminho)){
-				return "fotos/indisponivel.png";
-			} else {
-				return $caminho;
-			}
-		}
-	?>
 </head>
 <body>
 	<?php
 		require_once "includes/banco.php";
+		require_once "includes/funcoes.php";
 	?>
 	<div id="corpo">
 		<h1>Escolha seu jogo</h1>
 		<table class="listagem">
 			<?php
-				$busca = $banco->query("select * from jogos order by nome");
+				$busca = $banco->query("select * from jogos order by cod");
 				if(!$busca) {
 					echo "<tr><td> A busca não aconteceu";
 				} else {
@@ -34,7 +25,7 @@
 							$t = thumb($reg->capa);
 						echo "<tr>
 								<td><img class='mini' src='$t'/></td>
-								<td>" . $reg->nome . "</td>
+								<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a></td>
 								<td>Adm</td>
 							</tr>";
 						}

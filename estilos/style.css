@@ -15,6 +15,11 @@ img.mini {
     height: 50px !important;
 }
 
+img.full{
+	width: 400px;
+	height: 500px;
+}
+
 table.listagem{
 	width: 100%;
 	text-align: left;
@@ -39,4 +44,16 @@ table.listagem td:nth-child(1){
 
 table.listagem td:nth-child(3){
 	width: 90px;
+}
+
+table.detalhes{
+	width: 100%;
+	white-space: pre-wrap; /* preserva \n e quebra automaticamente */
+    word-wrap: break-word; /* quebra palavras muito grandes */
+}
+
+table.detalhes td {
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid black;
 }
