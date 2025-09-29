@@ -2,7 +2,8 @@ body {
 	background-color: #ddd;
 	font-family: Arial;
 }
-div#corpo{
+
+div#corpo {
 	width: 800px;
 	margin: auto;
 	padding: 20px;
@@ -11,16 +12,16 @@ div#corpo{
 }
 
 img.mini {
-    width: 50px !important;
-    height: 50px !important;
+	width: 50px !important;
+	height: 50px !important;
 }
 
-img.full{
+img.full {
 	width: 400px;
 	height: 500px;
 }
 
-table.listagem{
+table.listagem {
 	width: 100%;
 	text-align: left;
 }
@@ -29,26 +30,28 @@ table.listagem tr {
 	height: 50px;
 }
 
-table.listagem td{
+table.listagem td {
 	padding: 10px;
 }
 
-table.listagem tr:nth-child(even){
+table.listagem tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
 
-table.listagem td:nth-child(1){
+table.listagem td:nth-child(1) {
 	width: 50px;
 }
 
-table.listagem td:nth-child(3){
+table.listagem td:nth-child(3) {
 	width: 90px;
 }
 
-table.detalhes{
+table.detalhes {
 	width: 100%;
-	white-space: pre-wrap; /* preserva \n e quebra automaticamente */
-    word-wrap: break-word; /* quebra palavras muito grandes */
+	white-space: pre-wrap;
+	/* preserva \n e quebra automaticamente */
+	word-wrap: break-word;
+	/* quebra palavras muito grandes */
 }
 
 table.detalhes td {
@@ -57,19 +60,43 @@ table.detalhes td {
 	border: 1px solid black;
 }
 
-footer{
+footer {
 	text-align: center;
 	font-family: Arial;
 	font-size: 11px;
 }
 
-header{
+header {
 	text-align: right;
 	font-size: 12px;
 	font-family: Arial;
 }
 
-form#busca{
+form#busca {
 	margin-bottom: 20px;
-	text-align: left;
+	text-align: right;
+}
+
+div.sucesso {
+	padding: 7px 15px;
+	margin-bottom: 15px;
+	border-radius: 15px;
+	background-color: rgba(226, 239, 218);
+	color: color rgb(74, 116, 67);
+}
+
+div.aviso {
+	padding: 7px 15px;
+	margin-bottom: 15px;
+	border-radius: 15px;
+	background-color: rgba(251, 248, 218);
+	color: color rgb(134, 110, 66);
+}
+
+div.erro {
+	padding: 7px 15px;
+	margin-bottom: 15px;
+	border-radius: 15px;
+	background-color: rgba(239, 223, 222);
+	color: color rgb(157, 75, 69);
 }
