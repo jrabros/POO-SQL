@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang = "pt-br">
+<html lang="pt-br">
+
 <head>
-	<title>Titulo da Página</title>
-	<meta charset = "UTF-8"/>
+	<title>Listagem de jogos</title>
+	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="estilos/style.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>???</title>
 </head>
+
 <body>
 	<div id="corpo">
-		<h1>Olá!</h1>
+		
 	</div>
 </body>
+</html>

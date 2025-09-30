@@ -1,4 +1,4 @@
-<pre><?php
+<?php
 	$banco = new mysqli("localhost", "root", "", "bd_games"); //  host, user, senha, banco
 	// testar a conexao
 	if($banco->connect_errno){
