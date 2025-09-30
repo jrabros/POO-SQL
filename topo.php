@@ -4,7 +4,7 @@
        echo "<a href='user-login.php'>Entrar</a>"; 
     } else {
         echo "Olá, " . $_SESSION['nome'];
-        echo " | <a href=''>Sair<a>";
+        echo " | <a href='user-logout.php'>Sair<a>";
     }
     echo "</header>";
 ?>

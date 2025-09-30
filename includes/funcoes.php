@@ -31,3 +31,10 @@ function msg_erro($msg)
     $resp = "<div class='erro'><span class = 'material-icons'>error</span>$msg</div>";
     return $resp;
 }
+
+function logout()
+{
+    unset($_SESSION['user']);
+    unset($_SESSION['nome']);
+    unset($_SESSION['tipo']);
+}
