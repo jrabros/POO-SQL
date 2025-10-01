@@ -52,8 +52,14 @@
 						$t = thumb($reg->capa);
 						echo "<tr>
 							<td><img class='mini' src='$t'/></td>
-							<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a>[$reg->genero]<br>$reg->produtora	<td>Adm</td>
-						</tr>";
+							<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a>[$reg->genero]<br>$reg->produtora";
+						if(is_admin()){
+							echo "<td><i class = 'material-icons'>add_circle</i> |";
+							echo "<i class = 'material-icons'>edit</i> |";
+							echo "<i class = 'material-icons'>delete</i>";
+						} elseif(is_editor()){
+							echo "<td><i class = 'material-icons'>edit</i>";
+						}
 					}
 				}
 			}
