@@ -28,11 +28,18 @@
                     $tipo = $_POST['tipo'] ?? null;
                     
                     if($senha1 === $senha2){
-                        echo msg_sucesso("certo pra gravar");
+                        $senha = gerarHash($senha1);
+                        $q = "insert into usuarios (usuario, nome, senha, tipo) values ('$usuario', '$nome', '$senha', '$tipo')";
+                        if($banco->query($q)){
+                            echo msg_sucesso("Usuário $usuario cadastrado com sucesso");
+                        } else {
+                            echo msg_erro("Erro ao cadastrar: " . $banco->error);
+                            require "user-new-form.php";
+                        }
                     } else {
                         echo msg_erro("Senhas não conferem");
                         require "user-new-form.php";
-                    }
+                        }
                 }
             }
             echo voltar();

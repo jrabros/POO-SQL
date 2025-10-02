@@ -23,7 +23,7 @@ function gerarHash($senha){
 }
 
 function testarHash($senha, $hash){
-    return password_verify($senha, $hash);
+    return password_verify(cripto($senha), $hash);
 }
 //echo gerarHash("abc");
 //echo testarHash("bcd", "$2y$10$5BDJ6.K2jWPIR13N77wSK.wi2rTu7jvkXjz/9ZxIfB.JXFDsbhnGa")? "SIM":"NÃO ";
