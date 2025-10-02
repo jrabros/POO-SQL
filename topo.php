@@ -6,7 +6,7 @@
         echo "Olá, " . $_SESSION['nome'] . " | ";
         echo " Meus Dados | ";
         if(is_admin()) {
-            echo "Novo usuario | ";
+            echo "<a href = 'user-new.php'>Novo usuario</a> | ";
             echo "Novo jogo | ";
         }
         echo " | <a href='user-logout.php'>Sair<a>";
